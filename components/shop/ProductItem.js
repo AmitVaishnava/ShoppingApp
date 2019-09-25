@@ -21,7 +21,7 @@ const ProductItem = props => {
     return (
         <View style={styles.product}>
             <View style={styles.touchable}>
-                <TouchableCmp onPress={props.onViewDetail} useForedround>
+                <TouchableCmp onPress={props.onViewDetail} useForeground>
                     <View>
                         <View style={styles.imageContainer}>
                             <Image style={styles.image} source={{ uri: props.image }} />
