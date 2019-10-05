@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
         fontFamily: "open-sans-bold",
         fontSize: 16,
     },
-    amount: {},
     deleteButton: {
         marginLeft: 20,
     }
