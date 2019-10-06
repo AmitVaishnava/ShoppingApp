@@ -1,10 +1,11 @@
 import React from "react";
-import { FlatList, Platform } from "react-native";
+import { FlatList, Button, Platform } from "react-native";
 import { useSelector } from "react-redux";
 import ProductItem from "../../components/shop/ProductItem";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import HeaderButton from "../../components/UI/HeaderButton";
+import Colors from "../../constants/Colors";
 
 const UserProductsScreen = props => {
     const useProducts = useSelector(state => state.products.userProducts);
@@ -16,8 +17,21 @@ const UserProductsScreen = props => {
                     image={itemData.item.imageUrl}
                     title={itemData.item.title}
                     price={itemData.item.price}
-                    onViewDetail={() => { }}
-                    onAddToCart={() => { }} />
+                    onSelect={() => { }}
+                >
+                    <Button
+                        color={Colors.primaryColor}
+                        title="Edit"
+                        onPress={() => {
+
+                        }} />
+                    <Button
+                        color={Colors.primaryColor}
+                        title="Delete"
+                        onPress={() => {
+
+                        }} />
+                </ProductItem>
             )} />
     );
 };
