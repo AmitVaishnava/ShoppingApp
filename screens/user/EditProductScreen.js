@@ -5,7 +5,7 @@ import {
     Text,
     Platform,
     TextInput,
-    StyleSheet
+    StyleSheet,
 } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import { useSelector, useDispatch } from "react-redux";
@@ -34,7 +34,8 @@ const EditProductScreen = props => {
         } else {
             dispatch(productActions.createProduct(title, description, imageUrl, +price));
         }
-    }, []);
+        props.navigation.goBack();
+    }, [dispatch, prodId, title, description, imageUrl, price]);
 
     useEffect(() => {
         props.navigation.setParams({ submit: submitHandler });
